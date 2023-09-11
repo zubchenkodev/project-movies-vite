@@ -22,7 +22,20 @@ You will need to register an account with themoviedb.org and then register for
 
 When signing up for an API key, it asks a bunch of questions about what the application is for, but don't worry - we've contacted themoviedb.org and checked that they're OK with you all using the API for this purpose and it's all good in the hood. So, this is what you need to do:
 
-- Signup for themoviedb.org [This is an external link to genome.gov](https://www.genome.gov/)
+- Signup for [themoviedb.org](https://www.themoviedb.org/account/signup)
+- Go to https://www.themoviedb.org/settings/api/request
+- Select 'developer' & accept the terms
+- Fill in the form requesting an API. You need to select 'Website' in the dropdown and say the use is for Technigo. Like this:
+  <img src="/src/assets/api-form-sample.png" alt="Form Example">
+- Fill in your personal details.
+- Submit the form and you should be approved automatically. Copy the v3 API key from the following page.
+
+With your freshly minted API key, you're now ready to start making API requests. The API is well documented at [developers.themoviedb.org](https://developers.themoviedb.org/3), and if you click through onto an endpoint, there's a 'try it out' tab where you can paste in your API key and run a request to see what you get in response. These are the endpoints we used in our example application:
+
+#### Fetching popular movies for the list page
+
+https://api.themoviedb.org/3/movie/popular?api_key={api_key}&language=en-US&page=1
+!!! Don't forget to replace {api_key} with your API key if you copy and paste this.
 
 ### Requirements:
 
