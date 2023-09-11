@@ -66,15 +66,38 @@ To get the full URL, we need to decide what size of the image we'd like, and the
 }
 ```
 
+This means, that for backdrops (for example), we can choose to render the image at 300px wide, 780px, 1280px, or the original image size. You need to construct a URL using the secure_base_url + size + path from the API response.
+
+For example, if we get this in a movie response
+
+`"backdrop_path": "/5myQbDzw3l8K9yofUXRJ4UTVgam.jpg",`
+
+and we want the backdrop at 1280px, we could build up a URL like this:
+
+`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`
+
+The resulting URL would be https://image.tmdb.org/t/p/w1280/5myQbDzw3l8K9yofUXRJ4UTVgam.jpg
+
+You do not need to call the configuration endpoint within your app. Just use the sizes which it returns (shown above) to construct a URL with appropriate image sizes.
+
+#### Hints and tips to complete the project
+
+As always, start by sketching out your application - not just thinking about design, but how should it be split into components, and how should your routes look?
+
+In the example application we've linked to for you to follow the design from, it's built using two routes which each has one component as a child (it's up to you if you want to use this approach!):
+
+_Route: `/`, component: `PopularList`_
+
+This route is responsible for the home page. It uses `useEffect` to run an API request to themoviedb.org and fetch popular films in the US, puts them into state using `useState`, and then renders them wrapped in a `Link` from `react-router-dom` to link to the detail page.
+
+_Route: `/movies/:id`, component: `Detail`_
+
+This route expects a movie ID in the URL and is responsible for showing more details about a movie after you click on it. It uses `useParams` from `react-router-dom` to get the `id` from the URL and then passes that into an API call (within `useEffect`) to themoviedb.org to fetch details about a single movie, then puts the response into state using `useState` and finally renders it onto the page.
+
 ### Requirements:
 
-- Your survey should consist of at least 3 questions.
-- At least one question should use radio buttons.
-- At least one question should use a select dropdown.
-- There should be a submit button. When pressed your app should hide the input form and show a summary of the user's submissions.
-
-### Your page should be responsive:
-
+- Your app should have at least two pages - one showing a list of movies and one showing details
+- You should follow the design from our example (but it's ok to change things - just try to make it look nice).
 - Adapting to the different viewports
 
 ### Design
@@ -82,3 +105,12 @@ To get the full URL, we need to decide what size of the image we'd like, and the
 How you design your page is up to you, but take accessibility into account when you are styling your form elements - so inputs should have labels and should be easily readable and usable. We STRONGLY recommend having some kind of design or sketch before starting to code.
 
 Feel free to use other survey tools such as Typeform, Google Forms as inspiration. Or you can check out Dribbble, Behance or Pinterest.
+
+### Stretched Requirements
+
+- Show a 'not found' page if you try to visit a movie detail page with an invalid movie ID (so the user has tried to enter an ID themselves, most likely).
+  - In this case, when you send a movie detail request with a movie ID which doesn't exist in the API, the API returns with a 404 response. You can use .catch() on your promise to catch this exception and toggle some sort of 'error' state which can be used to show an error page.
+- Handle loading states - The API responds quite quickly, but if you're on a slow network then you'd be faced with a black screen until the response comes back. During this time, you could show a loading message or spinner of some sort on the page.
+  - Use something like `const [loading, setLoading] = useState(true)` to make it so the page is loading by default, then call `setLoading(false)` once you get the response back from the API.
+  - You could also investigate how to handle the loading of images - or show plain text by default and then use CSS to place the image over the text (using absolute positioning). This way, if the images take a long time to load, the user still sees something relevant.
+- On the homepage where you list popular movies, you could add a dropdown to change the list. For example, you could toggle between popular, upcoming, and new releases.
