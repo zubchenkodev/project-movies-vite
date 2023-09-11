@@ -37,6 +37,36 @@ With your freshly minted API key, you're now ready to start making API requests.
 https://api.themoviedb.org/3/movie/popular?api_key={api_key}&language=en-US&page=1
 !!! Don't forget to replace {api_key} with your API key if you copy and paste this.
 
+#### Fetching a movie's details
+
+https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}&language=en-US
+Don't forget to replace {api_key} with your API key and {movie_id} with the id you get from the url via react-router if you copy and paste this.
+
+### Rendering images from the API
+
+Each movie comes with a 'poster', which looks like a cover you'd find in a DVD, and a 'backdrop' which is more like a screen capture from a scene in the film. In the API response you get for a movie or list of movies, each one has a property for these images, but it looks like this
+
+`"backdrop_path": "/5myQbDzw3l8K9yofUXRJ4UTVgam.jpg",`
+
+<
+🎬 That path to the image is incomplete - it needs a full URL.
+
+To get the full URL, we need to decide what size of the image we'd like, and the API has a bunch of options for that. You can find the full list of sizes by loading the API endpoint https://api.themoviedb.org/3/configuration?api_key={api_key} (don't forget to put your API key in place of {api_key}). That response looks something like this:
+
+```json
+{
+  "images": {
+    "base_url": "http://image.tmdb.org/t/p/",
+    "secure_base_url": "https://image.tmdb.org/t/p/",
+    "backdrop_sizes": ["w300", "w780", "w1280", "original"],
+    "logo_sizes": ["w45", "w92", "w154", "w185", "w300", "w500", "original"],
+    "poster_sizes": ["w92", "w154", "w185", "w342", "w500", "w780", "original"],
+    "profile_sizes": ["w45", "w185", "h632", "original"],
+    "still_sizes": ["w92", "w185", "w300", "original"]
+  }
+}
+```
+
 ### Requirements:
 
 - Your survey should consist of at least 3 questions.
