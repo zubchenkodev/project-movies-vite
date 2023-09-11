@@ -11,14 +11,18 @@ This time, rather than following designs from a set of images, we'd like you to 
  <img src="/src/assets/finished-version.png" alt="Project Example">
 
    <a href="https://technigo-movies-project.netlify.com/">
-    Click Here to view sample of this project
+    Click here to view sample of this project
   </a>
 
-You can choose what you'd like your survey to be about. Perhaps you'd like to ask other developers what they think about different technologies, or perhaps you'd like to ask people about their favourite foods or hobbies. It's completely up to you.
+In this app, we've used the API to fetch popular movies in the US. You are free to choose whatever endpoint you'd like to build up your list. You could do the same as us, or you could, for example, show movies which are currently in the cinema or find movies in a particular genre. It's up to you!
 
-Once a user has “submitted” the survey you created they should see a summary. It doesn't actually need to be submitted anywhere - the focus here is to practice using React state and controlling forms.
+### Using the API
 
-You don't have to use a lot of components to start with when doing this project, see that as more of a stretch goal…
+You will need to register an account with themoviedb.org and then register for an API key in order to use the API.
+
+When signing up for an API key, it asks a bunch of questions about what the application is for, but don't worry - we've contacted themoviedb.org and checked that they're OK with you all using the API for this purpose and it's all good in the hood. So, this is what you need to do:
+
+- Signup for themoviedb.org [This is an external link to genome.gov](https://www.genome.gov/)
 
 ### Requirements:
 
