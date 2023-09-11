@@ -1,10 +1,18 @@
 # Instructions
 
-## Survey
+## Movie site
 
-This week we will be practicing React state and controlled forms by making a Typeform-like product. Your completed project should consist of at least 3 questions that need to be answered by users. When the user presses submit, they should see a summary of their answers.
+The goal for this week is to use themoviedb.org's API to fetch a list of movies (more on which movies further down), display them on a page, and then link to a movie detail page when you click on the movie.
+
+This time, rather than following designs from a set of images, we'd like you to follow (or even better: improve) the design which we've created in our example app using the same API.
 
 ### Context:
+
+ <img src="/src/assets/finished-version.png" alt="Project Example">
+
+   <a href="https://technigo-movies-project.netlify.com/">
+    Click Here to view sample of this project
+  </a>
 
 You can choose what you'd like your survey to be about. Perhaps you'd like to ask other developers what they think about different technologies, or perhaps you'd like to ask people about their favourite foods or hobbies. It's completely up to you.
 
