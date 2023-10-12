@@ -4,7 +4,7 @@
   </a>
 </h1>
 
-# Survey Project
+# Movie Site Project
 
 Replace this readme with your own information about your project.
 
