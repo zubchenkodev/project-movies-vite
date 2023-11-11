@@ -1,37 +1,15 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/movies.svg" alt="Project Banner Image">
-  </a>
-</h1>
+⭐️ Stretch Goals ⭐️
 
-# Movie Site Project
+1. App should have at least two pages - one showing a list of movies and one showing details ✅ + page for genres
+2. You should follow the design from our example (but it's ok to change things - just try to make it look nice)  ✅ + I have added changes everywhere.
+3. Adapting to the different viewports - ✅
 
-Replace this readme with your own information about your project.
+⭐️ Intermediate stretch goals ⭐️
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+1. 'Not found' page - ✅
+2. Handle loading states - ✅
 
-## Getting Started with the Project
+⭐️ Advanced stretch goals ⭐️
 
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
-
-### The Problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
-### View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+1. Dropdown to change the list - ✅
+2. Genres of each movie link to the page with the list of movies of same genre - ✅
