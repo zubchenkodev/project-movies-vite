@@ -13,3 +13,5 @@
 
 1. Dropdown to change the list - ✅
 2. Genres of each movie link to the page with the list of movies of same genre - ✅
+
+https://eclectic-wisp-525db5.netlify.app/

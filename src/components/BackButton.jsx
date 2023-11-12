@@ -13,7 +13,7 @@ const BackButton = ({children, target = -1}) => {
           navigate(target);
         }}
         >
-        <img src="../../src/assets/back.svg" alt="back" />
+        <img src="../assets/back.svg" alt="back" />
         {children}
         </button>
     )
